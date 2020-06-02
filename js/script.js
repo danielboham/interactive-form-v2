@@ -13,7 +13,6 @@ const themeSelect = document.getElementById('design');
 const themeOptions = themeSelect.selectedOptions;
 
 
-
 //FOCUS
 
 // Focus field "Name" on page load
@@ -104,7 +103,43 @@ themeSelect.addEventListener('change', function() {
 
 });
 
-// nu update field first avaialble color
+// Activities section
+
+/*
+Eerste optie is om alle mogelijkheden statisch op te slaan in een variabel. Als in HTML dingen veranderen dan breekt de code.
+We moeten dus een manier bedenken om data uit HTML uit te lezen en mee te nemen in de functie.
+Next step is om een variabel te maken van de input element dat is geklikt: var x = aangeklikte element(en) => input 'name'
+=> toevoegen van een id aan input van fieldset className activities.
+*/
+
+
+var totalActivityCosts = 0;
+
+var totalCount = document.createElement("label");
+totalCount.textContent = "Total: ";
+//div.setAttribute('id', 'total');
+
+var activity = document.querySelector(".activities");
+activity.appendChild(totalCount);
+
+console.log(activity);
+
+
+
+
+
+
+activity.addEventListener('change', function() {
+
+    var selectActivity = event.target;
+    var activityValue = selectActivity.getAttribute('data-cost');
+    var activityNumber = parseInt(activityValue);
+    totalActivityCosts += activityNumber;
+    console.log(totalActivityCosts);
+
+});
+
+//console.log(activities.childNodes[3].childNodes[1].name);
 
 
 
