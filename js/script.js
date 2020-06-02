@@ -26,7 +26,7 @@ window.onload = function() {
 otherTitle.style.display = 'none';
 
 // EventListener for when select Other
-select.addEventListener('change', function() {
+select.addEventListener('change', () => {
     for (i=0; i< options.length; i++) {
     if (options[i].text == "Other") {
         otherTitle.style.display = 'block';
@@ -55,7 +55,7 @@ for (i=0; i<colorOptions.length; i++){
     }
 }
 
-themeSelect.addEventListener('change', function() {
+themeSelect.addEventListener('change', () => {
     if (themeSelect[themeSelect.selectedIndex].value === 'js puns') {
         for (i=0; i<colorOptions.length; i++) {
             if (/\bPuns\b/.test(colorOptions[i].text) === true) {
@@ -104,42 +104,33 @@ themeSelect.addEventListener('change', function() {
 });
 
 // Activities section
+let totalCosts = 0;
+const activity = document.querySelector(".activities");
 
-/*
-Eerste optie is om alle mogelijkheden statisch op te slaan in een variabel. Als in HTML dingen veranderen dan breekt de code.
-We moeten dus een manier bedenken om data uit HTML uit te lezen en mee te nemen in de functie.
-Next step is om een variabel te maken van de input element dat is geklikt: var x = aangeklikte element(en) => input 'name'
-=> toevoegen van een id aan input van fieldset className activities.
-*/
-
-
-var totalActivityCosts = 0;
-
-var totalCount = document.createElement("label");
+// Create a label and append to activity
+const totalCount = document.createElement('label');
 totalCount.textContent = "Total: ";
-//div.setAttribute('id', 'total');
-
-var activity = document.querySelector(".activities");
 activity.appendChild(totalCount);
 
-console.log(activity);
+// Retrieve all attribute data with for loop
+const activityArray = activity.querySelectorAll('input');
 
+for (let i=0; i<activityArray.length; i++ ) {
+    //console.log(activityArray[i]);
+    activityArray[i].addEventListener('change', (e) => {
+        const activityCost = e.target.getAttribute('data-cost');
+        const activitySelected = e.target.checked;
+        calculation(activityCost, activitySelected);
+    })
+}
 
+// Function calculate amount
+function calculation (activityCost, activitySelected) {
+    if (activitySelected === true) {
+        totalCosts += parseInt(activityCost);
 
-
-
-
-activity.addEventListener('change', function() {
-
-    var selectActivity = event.target;
-    var activityValue = selectActivity.getAttribute('data-cost');
-    var activityNumber = parseInt(activityValue);
-    totalActivityCosts += activityNumber;
-    console.log(totalActivityCosts);
-
-});
-
-//console.log(activities.childNodes[3].childNodes[1].name);
-
-
-
+    } if (activitySelected === false) {
+        totalCosts -= parseInt(activityCost);
+    }
+    totalCount.textContent = "Total: " + totalCosts;
+}
