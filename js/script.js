@@ -119,18 +119,43 @@ for (let i=0; i<activityArray.length; i++ ) {
     //console.log(activityArray[i]);
     activityArray[i].addEventListener('change', (e) => {
         const activityCost = e.target.getAttribute('data-cost');
+        const dataDays = e.target.getAttribute('data-day-and-time');
+        const activityName = e.target.getAttribute('name');
         const activitySelected = e.target.checked;
-        calculation(activityCost, activitySelected);
+
+        calculation(activityCost, activitySelected, dataDays);
+        dataConflicts(dataDays, activitySelected, activityName);
+
     })
+
 }
 
+
+
 // Function calculate amount
-function calculation (activityCost, activitySelected) {
+function calculation (activityCost, activitySelected, dataDays) {
     if (activitySelected === true) {
         totalCosts += parseInt(activityCost);
-
     } if (activitySelected === false) {
         totalCosts -= parseInt(activityCost);
     }
     totalCount.textContent = "Total: " + totalCosts;
 }
+
+
+// Function disable date conflicts
+function dataConflicts (dataDays, activitySelected, activityName) {
+    for (let i=0; i<activityArray.length; i++) {
+        if (activitySelected === true) {
+        if (activityName !== activityArray[i].getAttribute('name')) {
+            if (dataDays === activityArray[i].getAttribute('data-day-and-time')) {
+                activityArray[i].setAttribute('disabled', '');
+                }
+            }
+        }
+        if (activitySelected === false) { activityArray[i].removeAttribute('disabled', '');
+
+        }
+    }
+}
+
