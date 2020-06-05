@@ -153,8 +153,11 @@ function dataConflicts (dataDays, activitySelected, activityName) {
                 }
             }
         }
-        if (activitySelected === false) { activityArray[i].removeAttribute('disabled', '');
-
+        if (activitySelected === false) {
+            if (activityName !== activityArray[i].getAttribute('name')) {
+                if (dataDays === activityArray[i].getAttribute('data-day-and-time'))
+                    activityArray[i].removeAttribute('disabled', '');
+            }
         }
     }
 }
