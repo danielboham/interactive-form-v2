@@ -164,50 +164,47 @@ function dataConflicts (dataDays, activitySelected, activityName) {
 
 // Function payment section
 
-// Get payment options and select Credit Card as default
+// Get payment options and select Credit Card as default and disable first option
 const creditCard = document.getElementById("payment");
 for (let i=0; i<creditCard.length; i++) {
-    creditCard[1].setAttribute('selected', 'selected');
+    creditCard[1].setAttribute('selected', '');
+    creditCard[0].disabled = true;
 }
 
-// Select options
+// Select divs for display
+const payCredit = document.getElementById("credit-card");
+const payPal = document.getElementById("paypal");
+const bitcoin = document.getElementById("bitcoin");
+
+// Select options with value and display associated div and initially hide 2 payment methods
+payPal.style.display = 'none';
+bitcoin.style.display = 'none';
+
 document.addEventListener('change', (e) =>{
+    if (e.target.value === 'select method') {
+        payCredit.style.display = 'none';
+        payPal.style.display = 'none';
+        bitcoin.style.display = 'none';
+    }
+
+    if (e.target.value === 'credit card') {
+        payCredit.style.display = 'block';
+        bitcoin.style.display = 'none';
+        payPal.style.display = 'none';
+    }
     if (e.target.value === 'paypal') {
-        console.log("het werkt");
+        payPal.style.display = 'block';
+        bitcoin.style.display = 'none';
+        payCredit.style.display = 'none';
+    }
+    if (e.target.value === 'bitcoin') {
+        bitcoin.style.display = 'block';
+        payPal.style.display = 'none';
+        payCredit.style.display = 'none';
     }
 })
 
-/*creditCard[2].addEventListener('change', (e) => {
-        console.log("het werkt");
 
-        const payCredit = e.target.getAttribute("credit-card");
-        const payPal = e.target.getAttribute("paypel");
-        const bitcoin = e.target.getAttribute("bitcoin");
-
-
-        //displayPaymentDivs(payCredit, payPal, bitcoin);
-    })*/
-
-
-
-// Select divs for display
-//const payCredit = document.getElementById("credit-card");
-//const payPal = document.getElementById("paypal");
-//const bitcoin = document.getElementById("bitcoin");
-
-/*/********
-
-// Make an array of selected divs to loop through.
-let paymentsSections = [payCredit, payPal, bitcoin];
-for (let i=0; i<paymentsSections.length; i++) {
-    paymentsSections[i].setAttribute("id", "invisible");
-    /*if (paymentsSections[i].id === "invisible") {
-        paymentsSections[i].style.display = "none";
-    }
-
-    //console.log(paymentsSections[i]);
-}
-*/
 
 
 
