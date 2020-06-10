@@ -204,9 +204,33 @@ document.addEventListener('change', (e) =>{
     }
 })
 
+// Function form validation
 
+// Get button and set initial to disabled + other styling
+const buttons = document.getElementsByTagName('button');
+for (let i=0; i<buttons.length; i++) {
+    btnRegister = buttons[0];
+    btnRegister.disabled = 'false';
+    btnRegister.style.opacity = '0.25';
 
+}
 
+// Get name input field
+const nameField = document.getElementById('name');
+nameField.style.border = '2px solid red';
+
+function nameValidation()  {
+    const regexName = /^(?!\s*$).+/;
+
+    if (regexName.test(nameField.value)) {
+        nameField.style.border = '2px solid darkblue';
+    } else {nameField.style.border = '2px solid red'; }
+}
+
+nameField.addEventListener('input', nameValidation);
+
+//on submit do validation
+// mulitple regex (?=match this expression)(?=match this too)(?=oh, and this)
 
 
 
