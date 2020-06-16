@@ -232,7 +232,7 @@ function nameValidation()  {
         nameField.style.border = '2px solid red';
         valArray.splice(0,1,false);
 
-    }
+    } arrayBoolean(); submitColor();
 }
 
 // Function validation email field
@@ -245,7 +245,7 @@ function emailValidation() {
     } else  {
         emailField.style.border = '2px solid red';
         valArray.splice(1,1,false);
-    }
+    } arrayBoolean(); submitColor();
 }
 
 
@@ -274,7 +274,7 @@ function submitColor() {
         }
     } //return(button[0].style.background);
 }
- submitColor();
+submitColor();
 
 
 
