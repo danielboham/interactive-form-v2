@@ -4,13 +4,13 @@ const otherTitle = document.getElementById("other-title");
 const select = document.getElementById("title");
 const options = select.selectedOptions;
 
-const design = document.getElementById("design");
-const designTheme = design.selectedOptions;
+//const design = document.getElementById("design");
+//const designTheme = design.selectedOptions;
 const color = document.getElementById("color");
 const colorOptions = color.options;
 
 const themeSelect = document.getElementById("design");
-const themeOptions = themeSelect.selectedOptions;
+//const themeOptions = themeSelect.selectedOptions;
 
 
 //FOCUS
@@ -204,34 +204,95 @@ document.addEventListener('change', (e) =>{
     }
 })
 
-// Function form validation
+// FORM VALIDATION
 
-// Get button and set initial to disabled + other styling
-const buttons = document.getElementsByTagName('button');
-for (let i=0; i<buttons.length; i++) {
-    btnRegister = buttons[0];
-    btnRegister.disabled = 'false';
-    btnRegister.style.opacity = '0.25';
+/*######################################*/
+// Get button and set styling to transparent to indicate that not all fields are filled in
 
-}
 
-// Get name input field
+/*######################################*/
+
+// Get all input fields + set initial border color
 const nameField = document.getElementById('name');
 nameField.style.border = '2px solid red';
 
+const emailField = document.getElementById('mail');
+emailField.style.border = '2px solid red';
+
+
+// Function validation name field
 function nameValidation()  {
-    const regexName = /^(?!\s*$).+/;
+    // Regex input contains only letters + space for firstName and lastName
+    const regexName = /^[A-Za-z]+\s[A-Za-z]+$/;
 
     if (regexName.test(nameField.value)) {
         nameField.style.border = '2px solid darkblue';
-    } else {nameField.style.border = '2px solid red'; }
+        valArray.splice(0,1,true);
+    } else {
+        nameField.style.border = '2px solid red';
+        valArray.splice(0,1,false);
+
+    }
 }
 
+// Function validation email field
+function emailValidation() {
+    const regexEmail = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
+    if (regexEmail.test(emailField.value)) {
+        emailField.style.border = '2px solid darkblue';
+        valArray.splice(1,1,true);
+
+    } else  {
+        emailField.style.border = '2px solid red';
+        valArray.splice(1,1,false);
+    }
+}
+
+
+// Array for initial boolean values for field validations
+let valArray = [];
+let value = 2;
+for (let i = 0; i <value; i++) {
+    valArray.push(false);
+}
+
+// Function that checks if valArray includes false and stores boolean true/false in arrayBoolean for intForm
+function arrayBoolean() {
+    let submitNow = true;
+    if (valArray.includes(false)) {
+        submitNow = false;
+    } return(submitNow);
+}
+
+function submitColor() {
+    const button = document.getElementsByTagName('button');
+    for (let i = 0; i < button.length; i++) {
+        if(arrayBoolean() === false) {
+            button[0].style.background = 'red';
+        } else {
+            button[0].style.background = 'green';
+        }
+    } //return(button[0].style.background);
+}
+ submitColor();
+
+
+
+// Call function when there's an input in nameField run nameValidation
 nameField.addEventListener('input', nameValidation);
 
-//on submit do validation
-// mulitple regex (?=match this expression)(?=match this too)(?=oh, and this)
+//call function when there's input in emailField run emailValidation
+emailField.addEventListener('input', emailValidation);
 
+//On submit do validation
+const intForm = document.querySelector('form');
 
+intForm.addEventListener('submit', (e) => {
+    if (arrayBoolean() === false) {
+        alert("Not all mandatory fields are filled in. Please fill in ...");
+    } else {
+        alert("successful form submission!")
+    }
+})
 
 
