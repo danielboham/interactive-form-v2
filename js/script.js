@@ -27,7 +27,7 @@ otherTitle.style.display = 'none';
 
 // EventListener for when select Other
 select.addEventListener('change', () => {
-    for (i=0; i< options.length; i++) {
+    for (let i=0; i< options.length; i++) {
     if (options[i].text == "Other") {
         otherTitle.style.display = 'block';
     } else {
@@ -103,7 +103,7 @@ themeSelect.addEventListener('change', () => {
 
 });
 
-// Activities section
+// ACTIVITIES SECTION //
 let totalCosts = 0;
 const activity = document.querySelector(".activities");
 
@@ -125,7 +125,7 @@ for (let i=0; i<activityArray.length; i++ ) {
 
         calculation(activityCost, activitySelected, dataDays);
         dataConflicts(dataDays, activitySelected, activityName);
-
+        checkBoxValidation(activitySelected);
     })
 
 }
@@ -133,7 +133,7 @@ for (let i=0; i<activityArray.length; i++ ) {
 
 
 // Function calculate amount
-function calculation (activityCost, activitySelected, dataDays) {
+function calculation (activityCost, activitySelected) {
     if (activitySelected === true) {
         totalCosts += parseInt(activityCost);
     } if (activitySelected === false) {
@@ -162,7 +162,7 @@ function dataConflicts (dataDays, activitySelected, activityName) {
     }
 }
 
-// Function payment section
+// PAYMENT SECTION //
 
 // Get payment options and select Credit Card as default and disable first option
 const creditCard = document.getElementById("payment");
@@ -191,26 +191,36 @@ document.addEventListener('change', (e) =>{
         payCredit.style.display = 'block';
         bitcoin.style.display = 'none';
         payPal.style.display = 'none';
+
+        //
+        valArray.splice(3,1,false);
+        valArray.splice(4,1,false);
+        valArray.splice(5,1,false);
     }
     if (e.target.value === 'paypal') {
         payPal.style.display = 'block';
         bitcoin.style.display = 'none';
         payCredit.style.display = 'none';
+
+        //
+        valArray.splice(3,1,true);
+        valArray.splice(4,1,true);
+        valArray.splice(5,1,true);
     }
     if (e.target.value === 'bitcoin') {
         bitcoin.style.display = 'block';
         payPal.style.display = 'none';
         payCredit.style.display = 'none';
+
+        //
+        valArray.splice(3,1,true);
+        valArray.splice(4,1,true);
+        valArray.splice(5,1,true);
     }
+    arrayBoolean(); submitColor();
 })
 
 // FORM VALIDATION
-
-/*######################################*/
-// Get button and set styling to transparent to indicate that not all fields are filled in
-
-
-/*######################################*/
 
 // Get all input fields + set initial border color
 const nameField = document.getElementById('name');
@@ -219,6 +229,14 @@ nameField.style.border = '2px solid red';
 const emailField = document.getElementById('mail');
 emailField.style.border = '2px solid red';
 
+const creditNumberField = document.getElementById('cc-num');
+creditNumberField.style.border = '2px solid red';
+
+const zipCodeField = document.getElementById('zip');
+zipCodeField.style.border = '2px solid red';
+
+const cvvField = document.getElementById('cvv');
+cvvField.style.border = '2px solid red';
 
 // Function validation name field
 function nameValidation()  {
@@ -231,8 +249,9 @@ function nameValidation()  {
     } else {
         nameField.style.border = '2px solid red';
         valArray.splice(0,1,false);
-
-    } arrayBoolean(); submitColor();
+    }
+     //Calls these functions to calculate boolean value for intForm function
+    arrayBoolean(); submitColor();
 }
 
 // Function validation email field
@@ -245,13 +264,73 @@ function emailValidation() {
     } else  {
         emailField.style.border = '2px solid red';
         valArray.splice(1,1,false);
+    }
+    //Calls these functions to calculate boolean value for intForm function
+    arrayBoolean(); submitColor();
+}
+
+// Function validation checkbox field
+function checkBoxValidation(activitySelected) {
+    if (activitySelected === true) {
+        valArray.splice(2,1,true);
+        } else {
+        valArray.splice(2,1,false);
+    }
+    arrayBoolean(); submitColor();
+}
+
+// Function for credit card validation
+function creditCardValidation() {
+    const regexNumber = /^\d{13,16}$/;
+    const regexZip = /^\d{5}$/;
+    const regexCVV = /^\d{3}$/;
+
+   if (regexNumber.test(creditNumberField.value)) {
+    creditNumberField.style.border = '2px solid darkblue';
+       valArray.splice(3,1,true);
+    } else {
+        creditNumberField.style.border = '2px solid red';
+       valArray.splice(3,1,false);
+    }
+    if (regexZip.test(zipCodeField.value)) {
+        zipCodeField.style.border = '2px solid darkblue';
+        valArray.splice(4,1,true);
+    } else {
+        zipCodeField.style.border = '2px solid red';
+        valArray.splice(4,1,false);
+    }
+    if (regexCVV.test(cvvField.value)) {
+        cvvField.style.border = '2px solid darkblue';
+        valArray.splice(5,1,true);
+    } else {
+        cvvField.style.border = '2px solid red';
+        valArray.splice(5,1,false);
+
     } arrayBoolean(); submitColor();
 }
 
+// When selecting PayPal or Bitcoin change valArray value to 3
+// Select PayPal and Bitcoin
+
+
+
+//CALLING FUNCTIONS ADDEVENTLISTENER
+// Call function when there's an input in nameField run nameValidation
+nameField.addEventListener('input', nameValidation);
+
+// Call function when there's input in emailField run emailValidation
+emailField.addEventListener('input', emailValidation);
+
+//
+creditNumberField.addEventListener('input',creditCardValidation);
+zipCodeField.addEventListener('input',creditCardValidation);
+cvvField.addEventListener('input',creditCardValidation);
+
+// als is geselecteerd push in array + waarde false als niet geselecteerd verijwder index nr
 
 // Array for initial boolean values for field validations
 let valArray = [];
-let value = 2;
+let value = 6;
 for (let i = 0; i <value; i++) {
     valArray.push(false);
 }
@@ -264,6 +343,7 @@ function arrayBoolean() {
     } return(submitNow);
 }
 
+// Function that checks arrayBoolean value and use this for if else statement
 function submitColor() {
     const button = document.getElementsByTagName('button');
     for (let i = 0; i < button.length; i++) {
@@ -272,17 +352,10 @@ function submitColor() {
         } else {
             button[0].style.background = 'green';
         }
-    } //return(button[0].style.background);
+    }
 }
 submitColor();
 
-
-
-// Call function when there's an input in nameField run nameValidation
-nameField.addEventListener('input', nameValidation);
-
-//call function when there's input in emailField run emailValidation
-emailField.addEventListener('input', emailValidation);
 
 //On submit do validation
 const intForm = document.querySelector('form');
