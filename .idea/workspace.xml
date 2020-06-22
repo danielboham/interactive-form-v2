@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2952f535-0f2d-45d2-a962-4017e6076e9b" name="Default" comment="Added real-time buttons color changing based on field validation">
+      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <exe-path>/usr/local/bin/bower</exe-path>
+    <config-path />
+  </component>
+  <component name="ProjectId" id="1cm8a86ZVCWBqJMyVFHSsbcwfTS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="js.eslint.eslintPackage" value="/usr/local/lib/node_modules/eslint" />
+    <property name="js.eslint.nodeInterpreter" value="project" />
+    <property name="js.last.introduce.type" value="LET" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2952f535-0f2d-45d2-a962-4017e6076e9b" name="Default" comment="" />
+      <created>1581630834286</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581630834286</updated>
+      <workItem from="1581630837289" duration="2578000" />
+      <workItem from="1581762759839" duration="3668000" />
+      <workItem from="1581836014754" duration="11713000" />
+      <workItem from="1582485681836" duration="3801000" />
+      <workItem from="1582575600562" duration="4178000" />
+      <workItem from="1582617923259" duration="981000" />
+      <workItem from="1583320582500" duration="7994000" />
+      <workItem from="1585766891637" duration="14989000" />
+      <workItem from="1585999172728" duration="4134000" />
+      <workItem from="1586067349355" duration="4384000" />
+      <workItem from="1588877703292" duration="5979000" />
+      <workItem from="1591040417898" duration="4080000" />
+      <workItem from="1591122476107" duration="7723000" />
+      <workItem from="1591285542388" duration="8765000" />
+      <workItem from="1591341782574" duration="34000" />
+      <workItem from="1591360846828" duration="12551000" />
+      <workItem from="1591646853274" duration="2614000" />
+      <workItem from="1591788020374" duration="7611000" />
+      <workItem from="1591820796473" duration="21000" />
+      <workItem from="1591860399730" duration="1020000" />
+      <workItem from="1591864785148" duration="29000" />
+      <workItem from="1592114990398" duration="4935000" />
+      <workItem from="1592292225567" duration="28426000" />
+      <workItem from="1592345048481" duration="949000" />
+      <workItem from="1592377559993" duration="707000" />
+      <workItem from="1592681999911" duration="9122000" />
+    </task>
+    <task id="LOCAL-00001" summary="Refactor color options">
+      <created>1585835536998</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585835536999</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Getting attribute data-cost">
+      <created>1591122621262</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591122621262</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Successfully refactor calculate amount">
+      <created>1591131184195</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591131184195</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Partly fixed date conflict">
+      <created>1591341511752</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591341511752</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed date conflict">
+      <created>1591361411371</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591361411371</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Creditcard as default and start addEventlistener funct.">
+      <created>1591536719281</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1591536719281</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Finished payment info">
+      <created>1591649636481</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1591649636481</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Start validation Name input">
+      <created>1591820768913</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1591820768913</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Finished name and email validation.&#10;Created array to store validation values&#10;Start of functions which should help validating submit.">
+      <created>1592339027698</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1592339027698</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added real-time buttons color changing based on field validation">
+      <created>1592345998953</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592345998953</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor color options" />
+    <MESSAGE value="Getting attribute data-cost" />
+    <MESSAGE value="Successfully refactor calculate amount" />
+    <MESSAGE value="Partly fixed date conflict" />
+    <MESSAGE value="Fixed date conflict" />
+    <MESSAGE value="Creditcard as default and start addEventlistener funct." />
+    <MESSAGE value="Finished payment info" />
+    <MESSAGE value="Start validation Name input" />
+    <MESSAGE value="Finished name and email validation.&#10;Created array to store validation values&#10;Start of functions which should help validating submit." />
+    <MESSAGE value="Added real-time buttons color changing based on field validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added real-time buttons color changing based on field validation" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2248" y="-344" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591341594770">
+      <screen x="1280" y="-795" width="2560" height="1417" />
+    </state>
+    <state x="2248" y="-344" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591341594770" />
+    <state x="421" y="23" key="CommitChangelistDialog2" timestamp="1592345998689">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="2735" y="-513" key="CommitChangelistDialog2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649636316" />
+    <state x="421" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1592345998689" />
+    <state x="480" y="268" key="Vcs.Push.Dialog.v2" timestamp="1592346002532">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="2727" y="-348" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649638304" />
+    <state x="480" y="268" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1592346002532" />
+    <state x="756" y="201" width="670" height="371" key="search.everywhere.popup" timestamp="1592682039825">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="2792" y="-471" width="670" height="676" key="search.everywhere.popup/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591129552778" />
+    <state x="756" y="201" width="670" height="371" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1592682039825" />
+  </component>
+</project>
