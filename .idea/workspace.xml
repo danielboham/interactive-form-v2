@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2952f535-0f2d-45d2-a962-4017e6076e9b" name="Default" comment="Fixed Creditcard validation">
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
-    </list>
+    <list default="true" id="2952f535-0f2d-45d2-a962-4017e6076e9b" name="Default" comment="Fixed Creditcard validation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +105,7 @@
       <workItem from="1592292225567" duration="28426000" />
       <workItem from="1592345048481" duration="949000" />
       <workItem from="1592377559993" duration="707000" />
-      <workItem from="1592681999911" duration="9537000" />
+      <workItem from="1592681999911" duration="9650000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor color options">
       <created>1585835536998</created>
@@ -207,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592854735084</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed Creditcard validation">
+      <created>1592854788536</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1592854788536</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,20 +244,24 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed Creditcard validation" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="523" y="281" key="#Notifications" timestamp="1592854892250">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="523" y="281" key="#Notifications/0.23.1280.777@0.23.1280.777" timestamp="1592854892250" />
     <state x="2248" y="-344" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591341594770">
       <screen x="1280" y="-795" width="2560" height="1417" />
     </state>
     <state x="2248" y="-344" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591341594770" />
-    <state x="349" y="23" key="CommitChangelistDialog2" timestamp="1592854734920">
+    <state x="349" y="23" key="CommitChangelistDialog2" timestamp="1592854788371">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="2735" y="-513" key="CommitChangelistDialog2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649636316" />
-    <state x="349" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1592854734920" />
-    <state x="480" y="268" key="Vcs.Push.Dialog.v2" timestamp="1592854764366">
+    <state x="349" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1592854788371" />
+    <state x="218" y="108" key="Vcs.Push.Dialog.v2" timestamp="1592854862361">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="2727" y="-348" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649638304" />
-    <state x="480" y="268" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1592854764366" />
+    <state x="218" y="108" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1592854862361" />
     <state x="756" y="201" width="670" height="371" key="search.everywhere.popup" timestamp="1592682039825">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
