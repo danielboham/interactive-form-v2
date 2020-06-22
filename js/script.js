@@ -310,7 +310,7 @@ function creditCardValidation() {
 }
 
 // When selecting PayPal or Bitcoin change valArray value to 3
-// Select PayPal and Bitcoin
+// Select PayPal and Bitcoin.
 
 
 
