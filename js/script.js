@@ -314,7 +314,7 @@ function creditCardValidation() {
 
 
 
-//CALLING FUNCTIONS ADDEVENTLISTENER
+//CALLING FUNCTIONS ADDEVENTLISTENER.
 // Call function when there's an input in nameField run nameValidation
 nameField.addEventListener('input', nameValidation);
 

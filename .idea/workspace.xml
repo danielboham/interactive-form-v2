@@ -107,7 +107,7 @@
       <workItem from="1592292225567" duration="28426000" />
       <workItem from="1592345048481" duration="949000" />
       <workItem from="1592377559993" duration="707000" />
-      <workItem from="1592681999911" duration="9443000" />
+      <workItem from="1592681999911" duration="9537000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor color options">
       <created>1585835536998</created>
@@ -193,7 +193,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592854494272</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixed Creditcard validation">
+      <created>1592854693990</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1592854693990</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fixed Creditcard validation">
+      <created>1592854735084</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1592854735084</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,16 +243,16 @@
       <screen x="1280" y="-795" width="2560" height="1417" />
     </state>
     <state x="2248" y="-344" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591341594770" />
-    <state x="349" y="23" key="CommitChangelistDialog2" timestamp="1592854415903">
+    <state x="349" y="23" key="CommitChangelistDialog2" timestamp="1592854734920">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="2735" y="-513" key="CommitChangelistDialog2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649636316" />
-    <state x="349" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1592854415903" />
-    <state x="480" y="268" key="Vcs.Push.Dialog.v2" timestamp="1592854611204">
+    <state x="349" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1592854734920" />
+    <state x="480" y="268" key="Vcs.Push.Dialog.v2" timestamp="1592854764366">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="2727" y="-348" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649638304" />
-    <state x="480" y="268" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1592854611204" />
+    <state x="480" y="268" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1592854764366" />
     <state x="756" y="201" width="670" height="371" key="search.everywhere.popup" timestamp="1592682039825">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
