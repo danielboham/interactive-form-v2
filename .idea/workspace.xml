@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2952f535-0f2d-45d2-a962-4017e6076e9b" name="Default" comment="Fixed Creditcard validation" />
+    <list default="true" id="2952f535-0f2d-45d2-a962-4017e6076e9b" name="Default" comment="Pushed CC Val">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,9 +53,14 @@
     <property name="js.eslint.eslintPackage" value="/usr/local/lib/node_modules/eslint" />
     <property name="js.eslint.nodeInterpreter" value="project" />
     <property name="js.last.introduce.type" value="LET" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -105,7 +114,8 @@
       <workItem from="1592292225567" duration="28426000" />
       <workItem from="1592345048481" duration="949000" />
       <workItem from="1592377559993" duration="707000" />
-      <workItem from="1592681999911" duration="9650000" />
+      <workItem from="1592681999911" duration="9830000" />
+      <workItem from="1592936600006" duration="12140000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor color options">
       <created>1585835536998</created>
@@ -212,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592854788536</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Pushed CC Val">
+      <created>1592855023040</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1592855023040</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +245,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactor color options" />
@@ -241,7 +259,8 @@
     <MESSAGE value="Finished name and email validation.&#10;Created array to store validation values&#10;Start of functions which should help validating submit." />
     <MESSAGE value="Added real-time buttons color changing based on field validation" />
     <MESSAGE value="Fixed Creditcard validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Creditcard validation" />
+    <MESSAGE value="Pushed CC Val" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pushed CC Val" />
   </component>
   <component name="WindowStateProjectService">
     <state x="523" y="281" key="#Notifications" timestamp="1592854892250">
@@ -252,16 +271,16 @@
       <screen x="1280" y="-795" width="2560" height="1417" />
     </state>
     <state x="2248" y="-344" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591341594770" />
-    <state x="349" y="23" key="CommitChangelistDialog2" timestamp="1592854788371">
+    <state x="349" y="23" key="CommitChangelistDialog2" timestamp="1592855022879">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="2735" y="-513" key="CommitChangelistDialog2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649636316" />
-    <state x="349" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1592854788371" />
-    <state x="218" y="108" key="Vcs.Push.Dialog.v2" timestamp="1592854862361">
+    <state x="349" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1592855022879" />
+    <state x="218" y="108" key="Vcs.Push.Dialog.v2" timestamp="1592855053677">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="2727" y="-348" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649638304" />
-    <state x="218" y="108" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1592854862361" />
+    <state x="218" y="108" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1592855053677" />
     <state x="756" y="201" width="670" height="371" key="search.everywhere.popup" timestamp="1592682039825">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

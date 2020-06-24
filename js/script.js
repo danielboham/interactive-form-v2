@@ -357,15 +357,45 @@ function submitColor() {
 submitColor();
 
 
+// Error messages
+
+// Target place where error message will be placed
+    const activityItems = document.getElementsByClassName('activities').item(0);
+
+// Create p element and text node for Name validation
+    const errorNameElement = document.createElement('p');
+    errorNameElement.style.color = 'white';
+    errorNameElement.style.background = 'red';
+    errorNameElement.style.padding = '4px';
+    errorNameElement.style.display = 'none';
+    const errorNameText = document.createTextNode("Please select an activity");
+
+// append for Name validation
+    errorNameElement.appendChild(errorNameText);
+    activityItems.prepend(errorNameElement);
+
+
+
+
+
+
 //On submit do validation
 const intForm = document.querySelector('form');
+intForm.disabled = false;
 
-intForm.addEventListener('submit', (e) => {
-    if (arrayBoolean() === false) {
-        alert("Not all mandatory fields are filled in. Please fill in ...");
-    } else {
-        alert("successful form submission!")
-    }
-})
+function showErrorMessage() {
+    nameField.style.border = '2px solid green';
+    nameField.placeholder = "Please enter your name here";
+    emailField.placeholder = "Please enter your email here";
+
+}
+
+intForm.addEventListener('submit', function(event) {
+    event.preventDefault()
+    showErrorMessage();
+});
+
+
+
 
 
