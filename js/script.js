@@ -4,13 +4,10 @@ const otherTitle = document.getElementById("other-title");
 const select = document.getElementById("title");
 const options = select.selectedOptions;
 
-//const design = document.getElementById("design");
-//const designTheme = design.selectedOptions;
 const color = document.getElementById("color");
 const colorOptions = color.options;
 
 const themeSelect = document.getElementById("design");
-//const themeOptions = themeSelect.selectedOptions;
 
 
 //FOCUS
@@ -40,7 +37,7 @@ select.addEventListener('change', () => {
 // T-SHIRT
 
 // Create option element with instruction message + plus select this option
-var opt = document.createElement('option');
+let opt = document.createElement('option');
 opt.appendChild(document.createTextNode("Please select a T-shirt theme") );
 opt.value = "selectTheme";
 opt.setAttribute("id", "select-theme");
@@ -48,7 +45,7 @@ opt.setAttribute("selected", "");
 color.appendChild(opt);
 
 // Give options initial id: invisible
-for (i=0; i<colorOptions.length; i++){
+for (let i=0; i<colorOptions.length; i++){
     color[i].setAttribute("id", "invisible");
     if (colorOptions[i].id === "invisible") {
         colorOptions[i].style.display = 'none';
@@ -57,47 +54,39 @@ for (i=0; i<colorOptions.length; i++){
 
 themeSelect.addEventListener('change', () => {
     if (themeSelect[themeSelect.selectedIndex].value === 'js puns') {
-        for (i=0; i<colorOptions.length; i++) {
+        for (let i=0; i<colorOptions.length; i++) {
             if (/\bPuns\b/.test(colorOptions[i].text) === true) {
                 colorOptions[i].setAttribute("id", "visible");
                 colorOptions[0].setAttribute("selected", "selected");
             }
-
             if (colorOptions[i].id === "visible") {
                 colorOptions[i].style.display = 'block';
             }
-
             if (/\bPuns\b/.test(colorOptions[i].text) === false) {
                 colorOptions[i].setAttribute("id", "invisible");
             }
-
             if (colorOptions[i].id === "invisible") {
                 colorOptions[i].style.display = 'none';
             }
-
         }
     }
 
     if (themeSelect[themeSelect.selectedIndex].value === 'heart js') {
-        for (i=0; i<colorOptions.length; i++) {
+        for (let i=0; i<colorOptions.length; i++) {
 
             if (/\bI\b/.test(colorOptions[i].text) === true) {
                 colorOptions[i].setAttribute("id", "visible");
                 colorOptions[3].setAttribute("selected", "selected");
             }
-
             if (colorOptions[i].id === "visible") {
                 colorOptions[i].style.display = 'block';
             }
-
             if (/\bI\b/.test(colorOptions[i].text) === false) {
                 colorOptions[i].setAttribute("id", "invisible");
             }
-
             if (colorOptions[i].id === "invisible") {
                 colorOptions[i].style.display = 'none';
             }
-
         }
     }
 
@@ -127,10 +116,7 @@ for (let i=0; i<activityArray.length; i++ ) {
         dataConflicts(dataDays, activitySelected, activityName);
         checkBoxValidation(activitySelected);
     })
-
 }
-
-
 
 // Function calculate amount
 function calculation (activityCost, activitySelected) {
@@ -162,8 +148,7 @@ function dataConflicts (dataDays, activitySelected, activityName) {
     }
 }
 
-// PAYMENT SECTION //
-
+//### PAYMENT SECTION ###//
 // Get payment options and select Credit Card as default and disable first option
 const creditCard = document.getElementById("payment");
 for (let i=0; i<creditCard.length; i++) {
@@ -220,7 +205,7 @@ document.addEventListener('change', (e) =>{
     arrayBoolean(); submitColor();
 })
 
-// FORM VALIDATION
+//### FORM VALIDATION ###//
 
 // Get all input fields + set initial border color
 const nameField = document.getElementById('name');
@@ -326,8 +311,6 @@ creditNumberField.addEventListener('input',creditCardValidation);
 zipCodeField.addEventListener('input',creditCardValidation);
 cvvField.addEventListener('input',creditCardValidation);
 
-// als is geselecteerd push in array + waarde false als niet geselecteerd verijwder index nr
-
 // Array for initial boolean values for field validations
 let valArray = [];
 let value = 6;
@@ -359,40 +342,69 @@ submitColor();
 
 // Error messages
 
-// Target place where error message will be placed
-    const activityItems = document.getElementsByClassName('activities').item(0);
-
-// Create p element and text node for Name validation
-    const errorNameElement = document.createElement('p');
-    errorNameElement.style.color = 'white';
-    errorNameElement.style.background = 'red';
-    errorNameElement.style.padding = '4px';
-    errorNameElement.style.display = 'none';
-    const errorNameText = document.createTextNode("Please select an activity");
-
-// append for Name validation
-    errorNameElement.appendChild(errorNameText);
-    activityItems.prepend(errorNameElement);
-
-
-
-
-
-
 //On submit do validation
 const intForm = document.querySelector('form');
 intForm.disabled = false;
 
-function showErrorMessage() {
-    nameField.style.border = '2px solid green';
+function showErrorMessageNameField() {
     nameField.placeholder = "Please enter your name here";
-    emailField.placeholder = "Please enter your email here";
-
 }
 
+function showErrorMessageEmailField() {
+    emailField.placeholder = "Please enter your email here";
+}
+
+function showErrorMessageActivities() {
+    const activityItems = document.getElementsByClassName('activities').item(0);
+
+    // Error message for Activities - create p element and text node for Name validation
+    const errorNameElement = document.createElement('p');
+    errorNameElement.style.color = 'white';
+    errorNameElement.style.background = 'red';
+    errorNameElement.style.padding = '4px';
+    errorNameElement.style.display = 'block';
+    const errorNameText = document.createTextNode("Please select an activity");
+
+    // Error message for Activities - append for Name validation
+    errorNameElement.appendChild(errorNameText);
+    activityItems.prepend(errorNameElement);
+}
+
+function showErrorMessageCreditCard() {
+    // Error message for Credit Card section
+    const errorCreditCardElement = document.createElement('p');
+    errorCreditCardElement.style.color = 'white';
+    errorCreditCardElement.style.background = 'red';
+    errorCreditCardElement.style.padding = '4px';
+    errorCreditCardElement.style.display = 'block';
+    const errorCreditCardText = document.createTextNode("Please fill in Credit Card details")
+
+    // Error message for Credit Card section
+    errorCreditCardElement.appendChild(errorCreditCardText);
+    payCredit.prepend(errorCreditCardElement);
+}
+
+
 intForm.addEventListener('submit', function(event) {
-    event.preventDefault()
-    showErrorMessage();
+
+    if (valArray[0] === false) {
+        showErrorMessageNameField()
+        event.preventDefault()
+    }
+    if (valArray[1] === false) {
+        showErrorMessageEmailField()
+        event.preventDefault()
+    }
+    if (valArray[2] === false) {
+        showErrorMessageActivities()
+        event.preventDefault()
+    }
+    if (valArray[3] === false) {
+        showErrorMessageCreditCard()
+        event.preventDefault()
+    } else {
+        alert("You have successfully sent your registration");
+    }
 });
 
 
