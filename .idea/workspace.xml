@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2952f535-0f2d-45d2-a962-4017e6076e9b" name="Default" comment="Fixed and added preventDefault">
+    <list default="true" id="2952f535-0f2d-45d2-a962-4017e6076e9b" name="Default" comment="First complete version commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
     </list>
@@ -115,7 +115,8 @@
       <workItem from="1592377559993" duration="707000" />
       <workItem from="1592681999911" duration="9830000" />
       <workItem from="1592936600006" duration="12188000" />
-      <workItem from="1593249266985" duration="4344000" />
+      <workItem from="1593249266985" duration="8924000" />
+      <workItem from="1593341930724" duration="2953000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor color options">
       <created>1585835536998</created>
@@ -236,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593027130088</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="First complete version commit">
+      <created>1593257494744</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1593257494744</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +276,8 @@
     <MESSAGE value="Fixed Creditcard validation" />
     <MESSAGE value="Pushed CC Val" />
     <MESSAGE value="Fixed and added preventDefault" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed and added preventDefault" />
+    <MESSAGE value="First complete version commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First complete version commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="523" y="281" key="#Notifications" timestamp="1592854892250">
@@ -279,16 +288,18 @@
       <screen x="1280" y="-795" width="2560" height="1417" />
     </state>
     <state x="2248" y="-344" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591341594770" />
-    <state x="349" y="23" key="CommitChangelistDialog2" timestamp="1593027129701">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="698" y="23" key="CommitChangelistDialog2" timestamp="1593257494471">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="2735" y="-513" key="CommitChangelistDialog2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649636316" />
     <state x="349" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1593027129701" />
-    <state x="218" y="108" key="Vcs.Push.Dialog.v2" timestamp="1593027135721">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="698" y="23" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1593257494471" />
+    <state x="436" y="178" key="Vcs.Push.Dialog.v2" timestamp="1593257498292">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="2727" y="-348" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-795.2560.1417@1280.-795.2560.1417" timestamp="1591649638304" />
     <state x="218" y="108" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1593027135721" />
+    <state x="436" y="178" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1593257498292" />
     <state x="756" y="201" width="670" height="371" key="search.everywhere.popup" timestamp="1592682039825">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

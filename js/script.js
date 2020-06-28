@@ -3,22 +3,19 @@ const focusLoad = document.getElementById("name");
 const otherTitle = document.getElementById("other-title");
 const select = document.getElementById("title");
 const options = select.selectedOptions;
-
 const color = document.getElementById("color");
 const colorOptions = color.options;
-
 const themeSelect = document.getElementById("design");
 
 
-//FOCUS
-
+//### FOCUS ###//
 // Focus field "Name" on page load
 window.onload = function() {
     focusLoad.focus();
 };
 
-//JOB ROLE
 
+//### JOB ROLE ###//
 // Initial hide Your Job Role input field
 otherTitle.style.display = 'none';
 
@@ -34,8 +31,7 @@ select.addEventListener('change', () => {
 });
 
 
-// T-SHIRT
-
+//### T-SHIRT section ###//
 // Create option element with instruction message + plus select this option
 let opt = document.createElement('option');
 opt.appendChild(document.createTextNode("Please select a T-shirt theme") );
@@ -52,12 +48,14 @@ for (let i=0; i<colorOptions.length; i++){
     }
 }
 
+// Event listener for changing color list
 themeSelect.addEventListener('change', () => {
     if (themeSelect[themeSelect.selectedIndex].value === 'js puns') {
-        for (let i=0; i<colorOptions.length; i++) {
+        for (let i = 0; i < colorOptions.length; i++) {
             if (/\bPuns\b/.test(colorOptions[i].text) === true) {
                 colorOptions[i].setAttribute("id", "visible");
                 colorOptions[0].setAttribute("selected", "selected");
+                colorOptions[3].removeAttribute("selected", "selected");
             }
             if (colorOptions[i].id === "visible") {
                 colorOptions[i].style.display = 'block';
@@ -70,13 +68,13 @@ themeSelect.addEventListener('change', () => {
             }
         }
     }
-
     if (themeSelect[themeSelect.selectedIndex].value === 'heart js') {
         for (let i=0; i<colorOptions.length; i++) {
 
             if (/\bI\b/.test(colorOptions[i].text) === true) {
                 colorOptions[i].setAttribute("id", "visible");
                 colorOptions[3].setAttribute("selected", "selected");
+                colorOptions[0].removeAttribute("selected", "selected");
             }
             if (colorOptions[i].id === "visible") {
                 colorOptions[i].style.display = 'block';
@@ -89,10 +87,10 @@ themeSelect.addEventListener('change', () => {
             }
         }
     }
-
 });
 
-// ACTIVITIES SECTION //
+
+//### ACTIVITIES SECTION ###//
 let totalCosts = 0;
 const activity = document.querySelector(".activities");
 
@@ -103,7 +101,6 @@ activity.appendChild(totalCount);
 
 // Retrieve all attribute data with for loop
 const activityArray = activity.querySelectorAll('input');
-
 for (let i=0; i<activityArray.length; i++ ) {
     //console.log(activityArray[i]);
     activityArray[i].addEventListener('change', (e) => {
@@ -128,7 +125,6 @@ function calculation (activityCost, activitySelected) {
     totalCount.textContent = "Total: " + totalCosts;
 }
 
-
 // Function disable date conflicts
 function dataConflicts (dataDays, activitySelected, activityName) {
     for (let i=0; i<activityArray.length; i++) {
@@ -147,6 +143,7 @@ function dataConflicts (dataDays, activitySelected, activityName) {
         }
     }
 }
+
 
 //### PAYMENT SECTION ###//
 // Get payment options and select Credit Card as default and disable first option
@@ -205,9 +202,13 @@ document.addEventListener('change', (e) =>{
     arrayBoolean(); submitColor();
 })
 
-//### FORM VALIDATION ###//
 
-// Get all input fields + set initial border color
+//### FORM VALIDATION ###//
+/* Get all input fields + set initial border color
+* The initial border color 'red' will change when the validation went well to 'blue'
+* Also the 'Register button had an initial value of 'red' this button will change colors when all fields
+* have validated values.
+* */
 const nameField = document.getElementById('name');
 nameField.style.border = '2px solid red';
 
@@ -223,7 +224,7 @@ zipCodeField.style.border = '2px solid red';
 const cvvField = document.getElementById('cvv');
 cvvField.style.border = '2px solid red';
 
-// Function validation name field
+// Function validation name field accepts two name value like Michael Jackson
 function nameValidation()  {
     // Regex input contains only letters + space for firstName and lastName
     const regexName = /^[A-Za-z]+\s[A-Za-z]+$/;
@@ -294,24 +295,22 @@ function creditCardValidation() {
     } arrayBoolean(); submitColor();
 }
 
-// When selecting PayPal or Bitcoin change valArray value to 3
-// Select PayPal and Bitcoin.
 
-
-
-//CALLING FUNCTIONS ADDEVENTLISTENER.
+//### CALLING FUNCTIONS ADD EVENT LISTENER ###//
 // Call function when there's an input in nameField run nameValidation
 nameField.addEventListener('input', nameValidation);
 
 // Call function when there's input in emailField run emailValidation
 emailField.addEventListener('input', emailValidation);
 
-//
+// Call function when there's input in credit card field run creditCardValidation
 creditNumberField.addEventListener('input',creditCardValidation);
 zipCodeField.addEventListener('input',creditCardValidation);
 cvvField.addEventListener('input',creditCardValidation);
 
-// Array for initial boolean values for field validations
+/* Array for initial boolean values for field validations I use this values for the color of the 'Register'
+* button
+*/
 let valArray = [];
 let value = 6;
 for (let i = 0; i <value; i++) {
@@ -340,20 +339,20 @@ function submitColor() {
 submitColor();
 
 
-// Error messages
-
+//### Error messages ###//
 //On submit do validation
 const intForm = document.querySelector('form');
 intForm.disabled = false;
 
+// when field input doesn't match requirements show text in field
 function showErrorMessageNameField() {
     nameField.placeholder = "Please enter your name here";
 }
-
+// when field input doesn't match requirements show text in field
 function showErrorMessageEmailField() {
     emailField.placeholder = "Please enter your email here";
 }
-
+// when no activities are selected show error message
 function showErrorMessageActivities() {
     const activityItems = document.getElementsByClassName('activities').item(0);
 
@@ -370,6 +369,7 @@ function showErrorMessageActivities() {
     activityItems.prepend(errorNameElement);
 }
 
+// when field input doesn't match requirements show error message
 function showErrorMessageCreditCard() {
     // Error message for Credit Card section
     const errorCreditCardElement = document.createElement('p');
@@ -384,7 +384,7 @@ function showErrorMessageCreditCard() {
     payCredit.prepend(errorCreditCardElement);
 }
 
-
+// Check where in valArray value is false so when [i] is false show relevant error message
 intForm.addEventListener('submit', function(event) {
 
     if (valArray[0] === false) {
