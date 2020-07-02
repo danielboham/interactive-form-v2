@@ -40,6 +40,9 @@ opt.setAttribute("id", "select-theme");
 opt.setAttribute("selected", "");
 color.appendChild(opt);
 
+// Add attribute 'value' to themeSelect[0] for the Event listener
+themeSelect[0].setAttribute("value", "select theme");
+
 // Give options initial id: invisible
 for (let i=0; i<colorOptions.length; i++){
     color[i].setAttribute("id", "invisible");
@@ -55,13 +58,14 @@ themeSelect.addEventListener('change', () => {
             if (/\bPuns\b/.test(colorOptions[i].text) === true) {
                 colorOptions[i].setAttribute("id", "visible");
                 colorOptions[0].setAttribute("selected", "selected");
-                colorOptions[3].removeAttribute("selected", "selected");
+                //colorOptions[3].removeAttribute("selected", "selected");
             }
             if (colorOptions[i].id === "visible") {
                 colorOptions[i].style.display = 'block';
             }
             if (/\bPuns\b/.test(colorOptions[i].text) === false) {
                 colorOptions[i].setAttribute("id", "invisible");
+                colorOptions[i].removeAttribute("selected", "selected");
             }
             if (colorOptions[i].id === "invisible") {
                 colorOptions[i].style.display = 'none';
@@ -74,17 +78,38 @@ themeSelect.addEventListener('change', () => {
             if (/\bI\b/.test(colorOptions[i].text) === true) {
                 colorOptions[i].setAttribute("id", "visible");
                 colorOptions[3].setAttribute("selected", "selected");
-                colorOptions[0].removeAttribute("selected", "selected");
+               // colorOptions[0].removeAttribute("selected", "selected");
             }
             if (colorOptions[i].id === "visible") {
                 colorOptions[i].style.display = 'block';
             }
             if (/\bI\b/.test(colorOptions[i].text) === false) {
                 colorOptions[i].setAttribute("id", "invisible");
+                colorOptions[i].removeAttribute("selected", "selected");
             }
             if (colorOptions[i].id === "invisible") {
                 colorOptions[i].style.display = 'none';
             }
+        }
+    } // Work with the created attribute
+    if (themeSelect[themeSelect.selectedIndex].value === 'select theme') {
+        for (let i = 0; i < colorOptions.length; i++) {
+
+            if (/\bselect\b/.test(colorOptions[i].text) === true) {
+                colorOptions[i].setAttribute("id", "visible");
+                colorOptions[i].setAttribute("selected", "selected");
+            }
+            if (colorOptions[i].id === "visible") {
+                colorOptions[i].style.display = 'block';
+            }
+            if (/\bselect\b/.test(colorOptions[i].text) === false) {
+                colorOptions[i].setAttribute("id", "invisible");
+                colorOptions[i].removeAttribute("selected", "selected");
+            }
+            if (colorOptions[i].id === "invisible") {
+                colorOptions[i].style.display = 'none';
+            }
+
         }
     }
 });
