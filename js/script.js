@@ -235,24 +235,24 @@ document.addEventListener('change', (e) =>{
 * have validated values.
 * */
 const nameField = document.getElementById('name');
-nameField.style.border = '2px solid red';
+//nameField.style.border = '2px solid red';
 
 const emailField = document.getElementById('mail');
-emailField.style.border = '2px solid red';
+//emailField.style.border = '2px solid red';
 
 const creditNumberField = document.getElementById('cc-num');
-creditNumberField.style.border = '2px solid red';
+//creditNumberField.style.border = '2px solid red';
 
 const zipCodeField = document.getElementById('zip');
-zipCodeField.style.border = '2px solid red';
+//zipCodeField.style.border = '2px solid red';
 
 const cvvField = document.getElementById('cvv');
-cvvField.style.border = '2px solid red';
+//cvvField.style.border = '2px solid red';
 
 // Function validation name field accepts two name value like Michael Jackson
 function nameValidation()  {
-    // Regex input contains only letters + space for firstName and lastName
-    const regexName = /^[A-Za-z]+\s[A-Za-z]+$/;
+    // Regex validation - everything except empty field
+    const regexName = /^(?!\s*$).+/;
 
     if (regexName.test(nameField.value)) {
         nameField.style.border = '2px solid darkblue';
@@ -290,35 +290,39 @@ function checkBoxValidation(activitySelected) {
     arrayBoolean(); submitColor();
 }
 
-// Function for credit card validation
+//### Function for credit card validation ###//
 function creditCardValidation() {
     const regexNumber = /^\d{13,16}$/;
     const regexZip = /^\d{5}$/;
     const regexCVV = /^\d{3}$/;
 
-   if (regexNumber.test(creditNumberField.value)) {
-    creditNumberField.style.border = '2px solid darkblue';
-       valArray.splice(3,1,true);
+    if (regexNumber.test(creditNumberField.value)) {
+        creditNumberField.style.border = '2px solid darkblue';
+        valArray.splice(3, 1, true);
     } else {
         creditNumberField.style.border = '2px solid red';
-       valArray.splice(3,1,false);
+        valArray.splice(3, 1, false);
     }
+
     if (regexZip.test(zipCodeField.value)) {
         zipCodeField.style.border = '2px solid darkblue';
         valArray.splice(4,1,true);
     } else {
         zipCodeField.style.border = '2px solid red';
         valArray.splice(4,1,false);
-    }
+    }   arrayBoolean(); submitColor();
+
     if (regexCVV.test(cvvField.value)) {
         cvvField.style.border = '2px solid darkblue';
         valArray.splice(5,1,true);
     } else {
         cvvField.style.border = '2px solid red';
         valArray.splice(5,1,false);
-
     } arrayBoolean(); submitColor();
 }
+
+
+
 
 
 //### CALLING FUNCTIONS ADD EVENT LISTENER ###//
@@ -371,38 +375,47 @@ intForm.disabled = false;
 
 // when field input doesn't match requirements show text in field
 function showErrorMessageNameField() {
+    nameField.style.border = '2px solid red';
     nameField.placeholder = "Please enter your name here";
 }
 // when field input doesn't match requirements show text in field
 function showErrorMessageEmailField() {
+    emailField.style.border = '2px solid red';
     emailField.placeholder = "Please enter your email here";
 }
-// when no activities are selected show error message
+
+//### when no activities are selected show error message ###//
+// Error message for Activities - create p element and text node for Name validation
+const errorNameElement = document.createElement('p');
+errorNameElement.style.color = 'white';
+errorNameElement.style.background = 'red';
+errorNameElement.style.padding = '4px';
+errorNameElement.style.display = 'block';
+const errorNameText = document.createTextNode("Please select an activity");
+
+// Function showErrorMessage
 function showErrorMessageActivities() {
     const activityItems = document.getElementsByClassName('activities').item(0);
-
-    // Error message for Activities - create p element and text node for Name validation
-    const errorNameElement = document.createElement('p');
-    errorNameElement.style.color = 'white';
-    errorNameElement.style.background = 'red';
-    errorNameElement.style.padding = '4px';
-    errorNameElement.style.display = 'block';
-    const errorNameText = document.createTextNode("Please select an activity");
-
     // Error message for Activities - append for Name validation
     errorNameElement.appendChild(errorNameText);
     activityItems.prepend(errorNameElement);
 }
 
-// when field input doesn't match requirements show error message
+//### when field input doesn't match requirements show error message ###//
+// Error message for Credit Card section - create p element and text node for CC validation
+const errorCreditCardElement = document.createElement('p');
+errorCreditCardElement.style.color = 'white';
+errorCreditCardElement.style.background = 'red';
+errorCreditCardElement.style.padding = '4px';
+errorCreditCardElement.style.display = 'block';
+const errorCreditCardText = document.createTextNode("Please fill in Credit Card details")
+
+// Function showErrorMessage
 function showErrorMessageCreditCard() {
-    // Error message for Credit Card section
-    const errorCreditCardElement = document.createElement('p');
-    errorCreditCardElement.style.color = 'white';
-    errorCreditCardElement.style.background = 'red';
-    errorCreditCardElement.style.padding = '4px';
-    errorCreditCardElement.style.display = 'block';
-    const errorCreditCardText = document.createTextNode("Please fill in Credit Card details")
+    // Red borders in input fields
+    creditNumberField.style.border = '2px solid red';
+    zipCodeField.style.border = '2px solid red';
+    cvvField.style.border = '2px solid red';
 
     // Error message for Credit Card section
     errorCreditCardElement.appendChild(errorCreditCardText);
@@ -412,26 +425,41 @@ function showErrorMessageCreditCard() {
 // Check where in valArray value is false so when [i] is false show relevant error message
 intForm.addEventListener('submit', function(event) {
 
-    if (valArray[0] === false) {
-        showErrorMessageNameField()
-        event.preventDefault()
-    }
-    if (valArray[1] === false) {
-        showErrorMessageEmailField()
-        event.preventDefault()
-    }
-    if (valArray[2] === false) {
-        showErrorMessageActivities()
-        event.preventDefault()
-    }
-    if (valArray[3] === false) {
-        showErrorMessageCreditCard()
-        event.preventDefault()
-    } else {
-        alert("You have successfully sent your registration");
-    }
+        if (valArray[0] === false) {
+            showErrorMessageNameField()
+            event.preventDefault()
+        }
+        if (valArray[1] === false) {
+            showErrorMessageEmailField()
+            event.preventDefault()
+        }
+        if (valArray[2] === false) {
+            showErrorMessageActivities()
+            event.preventDefault()
+        }
+        if (valArray[3] === false) {
+            showErrorMessageCreditCard()
+            event.preventDefault()
+        }
+        if (valArray[4] === false) {
+            showErrorMessageCreditCard()
+            event.preventDefault()
+        }
+        if (valArray[5] === false) {
+            showErrorMessageCreditCard()
+            event.preventDefault()
+        }
+            submitSubmit()
 });
 
+// checks value of arrayBoolean and use boolean value for alert
+function submitSubmit() {
+    if (arrayBoolean() === true) {
+        alert("You have successfully signed up");
+    } else {
+        alert("please fill in the mandatory fields in the form")
+    }
+}
 
 
 
